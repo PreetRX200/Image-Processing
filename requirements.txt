@@ -1,7 +1,6 @@
 #python version 3.9.13 use a virtual environment and download every package
 # every package install supporting 3.9.13
 ultralytics
-uninstall opencv-python
 pyautogui
 cvzone
 streamlit 
