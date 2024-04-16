@@ -2,7 +2,8 @@
 # every package install supporting 3.9.13
 ultralytics
 pyautogui
-uninstall opencv-python
+opencv-python-headless
 cvzone
 streamlit 
-opengl-python
+twilio
+
