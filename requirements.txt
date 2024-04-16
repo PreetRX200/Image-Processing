@@ -6,5 +6,5 @@ cvzone
 streamlit 
 twilio
 numpy
-opencv-python-headless
+opencv-python
 
