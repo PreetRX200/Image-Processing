@@ -7,4 +7,4 @@ streamlit
 twilio
 numpy
 opencv-python
-tinkter
+
