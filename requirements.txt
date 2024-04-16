@@ -2,7 +2,7 @@
 # every package install supporting 3.9.13
 ultralytics
 pyautogui
-opencv-python
+uninstall opencv-python
 cvzone
 streamlit 
 opengl-python
