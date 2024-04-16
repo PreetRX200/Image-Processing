@@ -3,10 +3,9 @@ import cv2
 import math
 from ultralytics import YOLO
 import cvzone
-import pyautogui
 import time
 import datetime
-import time as time_module
+import tkinter as tk
 from twilio.rest import Client
 
 # Twilio credentials
@@ -16,6 +15,13 @@ client = Client(account_sid, auth_token)
 
 # Set the page config as the first Streamlit command
 st.set_page_config(page_title="Call-Sheild: Call Detection App", layout="wide")
+
+def get_screen_resolution():
+    root = tk.Tk()
+    screen_width = root.winfo_screenwidth()
+    screen_height = root.winfo_screenheight()
+    root.destroy()
+    return screen_width, screen_height
 
 def call_detection_app():
     # Sidebar with options
@@ -36,7 +42,7 @@ def call_detection_app():
     if run:
         cap = cv2.VideoCapture(source)
         model = YOLO('best.pt')
-        screen_width, screen_height = pyautogui.size()  # Get screen resolution
+        screen_width, screen_height = get_screen_resolution()  # Use the new function
         classnames = ['phone']
         prev_frame_time = 0
         new_frame_time = 0
@@ -83,7 +89,7 @@ def call_detection_app():
                 fps = int(fps)
 
                 # Generate unique keys for buttons
-                current_time = str(time_module.time())
+                current_time = str(time.time())
 
                 # Update buttons with new values
                 fps_button_placeholder.button(f"FPS: {fps}", key=f"fps_{current_time}")
