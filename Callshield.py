@@ -1,4 +1,5 @@
 import streamlit as st
+import cv2
 import math
 from ultralytics import YOLO
 import cvzone
@@ -7,8 +8,6 @@ import time
 import datetime
 import time as time_module
 from twilio.rest import Client
-import cv2.cv2 as cv2  # Importing cv2 from opencv-contrib-python-headless
-from streamlit_webrtc import VideoTransformerBase, webrtc_streamer
 
 # Twilio credentials
 account_sid = 'ACebecc9f1e84782c17a16a5cbe8a2368d'
