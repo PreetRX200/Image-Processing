@@ -2,8 +2,7 @@
 # every package install supporting 3.9.13
 ultralytics
 pyautogui
-opencv-python==4.6.0
-
+opencv-python==4.6.0.66	
 cvzone
 streamlit 
 twilio
