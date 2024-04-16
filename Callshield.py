@@ -5,7 +5,7 @@ from ultralytics import YOLO
 import cvzone
 import time
 import datetime
-import tkinter as tk
+import screeninfo
 from twilio.rest import Client
 
 # Twilio credentials
@@ -17,10 +17,9 @@ client = Client(account_sid, auth_token)
 st.set_page_config(page_title="Call-Sheild: Call Detection App", layout="wide")
 
 def get_screen_resolution():
-    root = tk.Tk()
-    screen_width = root.winfo_screenwidth()
-    screen_height = root.winfo_screenheight()
-    root.destroy()
+    screen = screeninfo.get_monitors()[0]
+    screen_width = screen.width
+    screen_height = screen.height
     return screen_width, screen_height
 
 def call_detection_app():
