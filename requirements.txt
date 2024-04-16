@@ -5,3 +5,4 @@ pyautogui
 opencv-python
 cvzone
 streamlit 
+opengl-python
