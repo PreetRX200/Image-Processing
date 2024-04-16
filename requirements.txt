@@ -6,4 +6,4 @@ streamlit
 twilio
 numpy
 opencv-python
-screeninfo
+
