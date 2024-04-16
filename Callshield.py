@@ -5,7 +5,6 @@ from ultralytics import YOLO
 import cvzone
 import time
 import datetime
-import screeninfo
 from twilio.rest import Client
 
 # Twilio credentials
@@ -15,12 +14,6 @@ client = Client(account_sid, auth_token)
 
 # Set the page config as the first Streamlit command
 st.set_page_config(page_title="Call-Sheild: Call Detection App", layout="wide")
-
-def get_screen_resolution():
-    screen = screeninfo.get_monitors()[0]
-    screen_width = screen.width
-    screen_height = screen.height
-    return screen_width, screen_height
 
 def call_detection_app():
     # Sidebar with options
@@ -41,7 +34,6 @@ def call_detection_app():
     if run:
         cap = cv2.VideoCapture(source)
         model = YOLO('best.pt')
-        screen_width, screen_height = get_screen_resolution()  # Use the new function
         classnames = ['phone']
         prev_frame_time = 0
         new_frame_time = 0
@@ -58,7 +50,8 @@ def call_detection_app():
         while run:
             ret, frame = cap.read()
             if ret:
-                frame = cv2.resize(frame, (screen_width, screen_height))
+                # Remove the line that resizes the frame
+                # frame = cv2.resize(frame, (screen_width, screen_height))
                 result = model(frame, stream=True)
 
                 # Initialize a flag to check if a bounding box is found
